@@ -1,0 +1,307 @@
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #ECF9FF;
+}
+
+body {
+    font-size: 16px;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1{
+  font-size: 22pt;
+  font-style: oblique;
+  margin:0pt;
+  padding:0pt;
+
+  background:linear-gradient(
+    to right,
+    rgb(142, 199, 229) 0%,
+    rgb(255,255,255) 10%,
+    rgb(142, 199, 229)20%);
+    background-position: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 7s infinite linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move{
+  0%{background-position: -50px;}
+  50%{background-position: 180px;}
+  100%{background-position: 200px;}
+}
+
+
+label{
+  color:black;
+}
+
+#version{
+    font-size: 10pt;
+    color: lightgray;
+}
+
+
+#listcontainer {
+   flex: 1 1 auto; /* grow to fill space */
+  overflow: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+   background-color: white;
+}
+
+#leftbuttonmenu{
+  /*position: absolute;*/
+  flex-shrink: 0;
+  margin-top: 10px;;
+
+}
+
+#aqlstore{
+  display: none;
+  color:white;
+}
+
+.copyright{
+  color:black;
+  font-style: italic;
+  font-weight: normal;
+}
+
+
+input[type="file"]::file-selector-button {
+  display: none;
+  margin-top: 5px;
+  height: 35px;
+  padding: 0.2em 0.4em;
+  border-radius: 5px;
+  background-color: #F5F5F5;
+  cursor:pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #BDE0F2;
+  transition: 0.2s;
+}
+
+
+ul{
+    list-style: none;
+    padding: 5px;
+    padding-top: 0px;
+    background-color: white;
+    color: #A20707;
+    font-weight: bold;
+    
+}
+
+#leftbar {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: #00375F;
+    padding: 10px;
+    
+    position: sticky;
+    top: 0px;
+    height: 100vh;
+    overflow:hidden;
+    box-shadow: 3px 0px 5px #888888;
+    box-sizing: border-box;
+}
+
+
+li {
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    word-wrap: break-word;
+    padding: 5px;
+    background-color: white;
+    font-size: 10pt;
+    font-weight: normal;
+    border-bottom: 1px solid lightgrey;
+}
+
+li:hover {
+    background-color: #A20707;
+    /*font-weight: bold;*/
+    color:white;
+}
+
+#aql_list li.selected {
+    background-color: salmon;
+    /*font-weight: bold;*/
+    color: white;
+    cursor: pointer;
+}
+
+#main {
+    height: 95vh;
+    width:100px;
+    flex-grow: 1;
+    padding: 20px;
+    overflow: auto;
+}
+
+#title{
+    width: 400px;
+    height: 30px;
+    border-radius: 5pt;
+    font-weight: bold;
+    font-size: 11pt;
+    padding-left: 5pt;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+textarea, .highlighted, .outputBox2, .outputPostman {
+    width: 100%;
+    min-height: 200px;
+    font-family: monospace;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow: auto;
+    border-radius: 5pt;
+  	margin-bottom:10px;
+  }
+
+  .highlighted {
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 30px;
+    border-radius: 0pt;
+  }
+
+  .outputBox2, .outputPostman {
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 30px;
+  }
+
+  #descriptionBox{
+    min-height: 80px;
+  }
+
+#outputBox {
+    /*display: none;*/
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    font-size: 10pt;
+    overflow-wrap: break-word;
+    
+    min-height: 0pt;
+  }
+
+  .keyword {
+    color: blue;
+    font-weight: bold;
+  }
+  .datatype_keyword {
+    color: red;
+    font-weight: bold;
+  }
+  .green_keyword {
+    color: green;
+    font-weight: bold;
+  }
+  .parameter_keyword {
+    color: orange;
+    font-weight: bold;
+  }
+
+  .comment {
+    color:gray;
+    font-style: italic;
+  }
+
+ .alias {
+    color:hotpink;
+    font-style: bold;
+  }
+
+  button, .custom-file-upload {
+    padding: 10px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    width: 230px;
+    border-radius: 5pt;
+    /*background-color: #F5F5F5;*/
+    background-color: #f5f5f5;
+    /*box-shadow: 1px 1px 3px gray;*/
+  }
+
+  .topbutton,   #clear_storage{
+    padding: 1pt;
+    width: auto;
+    align-self: right;
+    font-size: 10pt;
+	height:25px;
+	width:25px;
+  }
+
+  .custom-file-upload {
+    width: 210px;
+    text-align-last: center;
+  }
+
+#searchInput{
+  border: 1px solid #ccc;
+  border-radius: 5pt;
+  font-family: monospace;
+  padding-left:5px;
+  margin-top: 10pt;
+  min-height: 20pt;
+}
+
+/*#checkBoxDescription{
+  margin-top: 5pt;
+  color: white;
+  font-size: 14px;
+}*/
+
+input[type="checkbox"] {
+  cursor:pointer;
+}
+
+#checkBoxDescription {
+  margin-top: 5pt;
+  display: flex;
+  align-items: center; /* Vertically center the label text */
+  color: white;
+  gap: 0.25em; /* Optional: space between checkbox and text */
+  font-size: 14px; /* Optional: control label text size */
+  cursor:pointer;
+}
+
+#checkBoxDescription input[type="checkbox"] {
+  
+  width: 16px;   /* Increase checkbox size */
+  height: 16px;  /* Increase checkbox size */
+}
+
+.query_parameter_input{
+  max-width: 500px;
+  border-radius: 5pt;
+  padding: 5pt;
+  border: 1px solid #ccc;
+}
+
+#folderPath {
+  width: 300px;
+  max-width: 500px;
+  border-radius: 5pt;
+  padding: 5pt;
+  border: 1px solid #ccc;
+}
