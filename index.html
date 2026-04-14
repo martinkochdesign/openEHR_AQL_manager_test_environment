@@ -11,14 +11,20 @@
 
     <div id="leftbar">
         <h1>AQL Manager</h1>
-        <p id="version"><button id="clear_storage" title="Clear Local Storage">🗑️</button>Version 0.5.0</p>   
+        <div id="version">
+           <!-- <button id="clear_storage" title="Clear Local Storage">🗑️</button>-->
+            <span id="version_info"></span>
+            </div>
+    <!--
         <label for="aqlstore" class="custom-file-upload">
-            📤 Upload from JSON
+            📤 Upload AQL collection
         </label>
         <input type="file" id="aqlstore" name="aqlstore" accept=".json" />
-
-        <input type="text" id="searchInput" placeholder="Filter AQL list..." />
-        <label id="checkBoxDescription"><input type="checkbox" id="includeDescription" /> Include description in filter</label>
+    -->
+    <input type="text" id="searchInput" placeholder="Filter AQL list..." autocomplete="off"/>
+    <label id="checkBoxDescription">
+        <input type="checkbox" id="includeDescription" /> Include description in filter
+    </label>
 
         <div id="listcontainer">
             <ul id="aql_list">
@@ -26,7 +32,7 @@
         </div>
         <div id="leftbuttonmenu">
             <button id ="add_aql">➕ Add AQL</button><br>
-            <button id="save_aql">💾 Download AQL collection</button><br>
+            <!-- <button id="save_aql">💾 Download AQL collection</button><br> -->
             <button id="delete_aql" >❌ Delete AQL</button>
         </div>
     </div>
@@ -35,14 +41,24 @@
     
     <div id="main">
 
+        <button id="clear_storage" title="Clear Local Storage">🗑️</button>
+        <button id="save_aql">💾 Download</button>
+
+        <label for="aqlstore" class="custom-file-upload" id="uploadLabel" >
+        📤 Upload
+        </label>
+        <input type="file" id="aqlstore" name="aqlstore" accept=".json" />
+
+
+        <button id="togglePanelTheme" type="button">◐</button>
         <div>
             <label><strong>Title:</strong></label><br>
             <input type="text" id="title" name="title" required maxlength="128"
-                size="10" onfocusout="refreshAqlList(false);"/>          
+                size="10" autocomplete="off" onfocusout="refreshAqlList(false);"/>          
         </div>
         <div>
             <label><strong>Folder Path:</strong></label>
-            <input id="folderPath" placeholder="e.g. Clinical/Vitals" />        
+            <input id="folderPath" placeholder="e.g. Clinical/Vitals" autocomplete="off"/>        
         </div>
         
         <div>
@@ -74,7 +90,7 @@
         <span class="copyright">
             <br>       
             <br>       
-            &copy 2025 CatSalut. Servei Català de la Salut.
+            &copy 2025-26 CatSalut. Servei Català de la Salut.
             Licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0</a>.
            Author: <a href="mailto:martinandreaskoch@catsalut.cat" target="_blank">Martin A. Koch, PhD</a>.
             </span>

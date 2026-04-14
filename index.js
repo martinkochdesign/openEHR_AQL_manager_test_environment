@@ -1,3 +1,9 @@
+const version = '0.6.0';
+
+document.getElementById('version_info').innerHTML =
+  '<i>Version:&nbsp;</i> ' + version;
+
+
 //INITIATE CONSTANTS
 let selectedAQL = null;
 let aqlData = [];
@@ -824,6 +830,13 @@ document.getElementById('delete_aql').onclick = function () {
 document.getElementById('delete_aql').onclick = function () {
     if (!selectedAQL) return;
 
+    const message = `Do you really want to delete ${selectedAQL.title}?`;
+
+    const confirmed = confirm(message);
+    if (!confirmed) {
+        event.preventDefault(); // Prevents the deletion if user cancels
+        return;
+    }
     // Remove the selected AQL from the array
     aqlData = aqlData.filter(item => item !== selectedAQL);
 
@@ -910,3 +923,55 @@ function normalizeFolderPath(path) {
   return path;
 }
 
+
+let darkTheme = 'dark';
+
+document.getElementById("togglePanelTheme").addEventListener('click', () => {
+  const btn = document.getElementById("togglePanelTheme");
+  console.log('click!')
+  function setPanelTheme(mode) {
+    darkTheme = mode;
+    // mode = 'light' or 'dark'
+    const isLight = mode === "light";
+    document.body.classList.toggle("panel-light", isLight);
+    //btn.textContent = `${isLight ? "⚪" : "⚫"}`;
+    localStorage.setItem("panelTheme", isLight ? "light" : "dark");
+  }
+  if (darkTheme=='dark'){
+    setPanelTheme('light');
+  }
+  else{
+    setPanelTheme('dark');  
+  }
+
+})
+
+/*
+(function () {
+  const btn = document.getElementById("togglePanelTheme");
+  if (!btn) return;
+  console.log('button pushed')
+  function setPanelTheme(mode) {
+    // mode = 'light' or 'dark'
+    const isLight = mode === "light";
+    document.body.classList.toggle("panel-light", isLight);
+    btn.textContent = `Panels: ${isLight ? "Light" : "Dark"}`;
+    localStorage.setItem("panelTheme", isLight ? "light" : "dark");
+  }
+
+  // Initialize from storage or default to dark
+  const stored = localStorage.getItem("panelTheme");
+  if (stored === "light" || stored === "dark") {
+    setPanelTheme(stored);
+  } else {
+    setPanelTheme("dark");
+  }
+
+  // Toggle on click
+  btn.addEventListener("click", () => {
+    const current = localStorage.getItem("panelTheme") === "light" ? "light" : "dark";
+    const next = current === "light" ? "dark" : "light";
+    setPanelTheme(next);
+  });
+})();
+*/
