@@ -12,15 +12,10 @@
     <div id="leftbar">
         <h1>AQL Manager</h1>
         <div id="version">
-           <!-- <button id="clear_storage" title="Clear Local Storage">🗑️</button>-->
+
             <span id="version_info"></span>
             </div>
-    <!--
-        <label for="aqlstore" class="custom-file-upload">
-            📤 Upload AQL collection
-        </label>
-        <input type="file" id="aqlstore" name="aqlstore" accept=".json" />
-    -->
+
     <input type="text" id="searchInput" placeholder="Filter AQL list..." autocomplete="off"/>
     <label id="checkBoxDescription">
         <input type="checkbox" id="includeDescription" /> Include description in filter
@@ -32,7 +27,7 @@
         </div>
         <div id="leftbuttonmenu">
             <button id ="add_aql">➕ Add AQL</button><br>
-            <!-- <button id="save_aql">💾 Download AQL collection</button><br> -->
+
             <button id="delete_aql" >❌ Delete AQL</button>
         </div>
     </div>
@@ -42,9 +37,9 @@
     <div id="main">
 
         <button id="clear_storage" title="Clear Local Storage">🗑️</button>
-        <button id="save_aql">💾 Download</button>
+        <button id="save_aql" title="Download AQL collection">💾 Download</button>
 
-        <label for="aqlstore" class="custom-file-upload" id="uploadLabel" >
+        <label for="aqlstore" class="custom-file-upload" id="uploadLabel" title="Load AQL collection">
         📤 Upload
         </label>
         <input type="file" id="aqlstore" name="aqlstore" accept=".json" />

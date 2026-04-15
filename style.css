@@ -212,19 +212,23 @@ textarea, .highlighted, .outputBox2, .outputPostman {
   }
 
   .keyword {
-    color: blue;
+    /*color: blue;*/
+    color: var(--panel-kw);
     font-weight: bold;
   }
   .datatype_keyword {
     color: red;
+    color: var(--panel-dtkw);
     font-weight: bold;
   }
   .green_keyword {
-    color: green;
+    /*color: limegreen;*/
+    color: var(--panel-gnkw);
     font-weight: bold;
   }
   .parameter_keyword {
-    color: orange;
+    /*color: orange;*/
+    color: var(--panel-pkw);
     font-weight: bold;
   }
 
@@ -352,6 +356,10 @@ input[type="checkbox"] {
   --panel-bg: #020617;                     /* default: dark */
   --panel-fg: #e5e7eb;
   --panel-border: rgba(148, 163, 184, 0.35);
+  --panel-kw: rgb(130, 130, 245);
+  --panel-gnkw: limegreen;
+  --panel-dtkw: hotpink;
+  --panel-pkw: orange;
 }
 
 /* Light variant for panels */
@@ -359,6 +367,10 @@ body.panel-light {
   --panel-bg: #ffffff;
   --panel-fg: #0f172a;
   --panel-border: #e5e7eb;
+  --panel-kw: darkblue;
+  --panel-gnkw: #bc00bc;
+  --panel-dtkw: red;
+  --panel-pkw: rgb(255, 136, 0);
 }
 
 .highlighted {

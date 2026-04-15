@@ -1,4 +1,4 @@
-const version = '0.6.0';
+const version = '0.6.1';
 
 document.getElementById('version_info').innerHTML =
   '<i>Version:&nbsp;</i> ' + version;
@@ -15,7 +15,7 @@ const highlightBox = document.getElementById('highlightBox');
 
 const keywords = ['SELECT',  'FROM', 'CONTAINS', 'WHERE', 'ORDER BY', 'LIMIT', 'OFFSET'];
 const datatype_keywords = ['VERSION','EHR', 'CONTENT_ITEM', 'ENTRY', 'CARE_ENTRY', 'EVENT', 'ITEM_STRUCTURE', 'ITEM', 'COMPOSITION', 'FOLDER', 'EHR_STATUS', 'EVENT_CONTEXT', 'SECTION', 'GENERIC_ENTRY', 'ADMIN_ENTRY', 'OBSERVATION', 'INSTRUCTION', 'ACTION', 'EVALUATION', 'ACTIVITY', 'HISTORY', 'POINT_EVENT', 'INTERVAL_EVENT', 'ITEM_LIST', 'ITEM_SINGLE', 'ITEM_TABLE', 'ITEM_TREE', 'CLUSTER', 'ELEMENT'];
-const green_keywords = ['DESC','ASC','AS','DISTINCT', 'AND', 'OR', 'NOT', 'LIKE', 'matches', 'exists', '<', '>', '=', '!', 'true', 'false', 'NULL']
+const green_keywords = ['DESC','ASC','AS','DISTINCT', 'AND', 'OR', 'NOT', 'LIKE', 'matches', 'exists', 'true', 'false', 'NULL']
 let fileurl;
 
 
@@ -278,6 +278,7 @@ function populateAQLList(filterText = '') {
     if (p) openFolderPaths.add(p);
   });
 
+
   // --- Force-open the selected AQL's folder path (and all ancestors) ---
   const addAncestorsToOpenFolders = (folderPath) => {
     const norm = normalizeFolderPath(folderPath || ""); // ensures trailing "/"
@@ -290,6 +291,7 @@ function populateAQLList(filterText = '') {
       openFolderPaths.add(acc);
     }
   };
+  
 
   if (selectedAQL) {
     const fp = selectedAQL.folderPath || "";
@@ -300,6 +302,7 @@ function populateAQLList(filterText = '') {
       addAncestorsToOpenFolders(fp);
     }
   }
+    
 
   saveOpenFolders();
 
