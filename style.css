@@ -422,3 +422,8 @@ body.panel-light {
 
 }
 
+
+summary{
+  color: darkblue;
+  cursor: pointer;
+}

@@ -1,4 +1,4 @@
-const version = '0.6.1';
+const version = '0.6.2';
 
 document.getElementById('version_info').innerHTML =
   '<i>Version:&nbsp;</i> ' + version;
